@@ -5,6 +5,7 @@
 [![github-issues](https://img.shields.io/github/issues/abhisekp/cyclic-next.svg)](https://github.com/abhisekp/cyclic-next/issues)
 [![travis-status](https://img.shields.io/travis/abhisekp/cyclic-next.svg)](https://travis-ci.org/abhisekp/cyclic-next)
 [![coveralls](https://img.shields.io/coveralls/abhisekp/cyclic-next.svg)](https://coveralls.io/github/abhisekp/cyclic-next)
+[![codecov](https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg)](https://codecov.io/gh/abhisekp/cyclic-next)
 [![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 Get the cyclic next integer.
