@@ -28,8 +28,9 @@
     "build": "babel -d ./ ./src",
     "check": "npm run audit && npm outdated --depth 0",
     "github-release": "conventional-github-releaser -p angular",
-    "coverage": "nyc npm test",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && codecov && rm -rf ./coverage",
+    "coverage": "nyc ava",
+    "coveralls": "npm run coverage && nyc report -r text-lcov | coveralls && codecov && rimraf ./coverage",
+    "codecov": "npm run coverage && nyc report -r text-lcov > coverage.lcov && codecov && rimraf coverage.lcov",
     "lint": "xo src test",
     "test": "ava",
     "validate": "npm run lint && npm test",
@@ -65,6 +66,7 @@
     "nyc": "^6.1.1",
     "pmm": "^1.3.1",
     "pre-commit": "^1.1.3",
+    "rimraf": "^2.5.4",
     "xo": "^0.17.0"
   },
   "config": {
