@@ -1,6 +1,6 @@
 {
   "name": "cyclic-next",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get the cyclic next integer number.",
   "main": "lib/index.js",
   "files": [
