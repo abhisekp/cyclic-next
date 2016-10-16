@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cyclic Next by abhisekp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Cyclic Next</h1>
+      <h2 class="project-tagline">Get the cyclic next integer number.</h2>
+      <a href="https://github.com/abhisekp/cyclic-next" class="btn">View on GitHub</a>
+      <a href="https://github.com/abhisekp/cyclic-next/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/abhisekp/cyclic-next/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="cyclic-next" class="anchor" href="#cyclic-next" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cyclic-next</h1>
+
+<p><a href="https://www.npmjs.com/package/cyclic-next"><img src="https://img.shields.io/npm/v/cyclic-next.svg" alt="npm"></a>
+<a href="https://abhisekp.mit-license.org/"><img src="https://img.shields.io/npm/l/cyclic-next.svg" alt="license"></a>
+<a href="https://github.com/abhisekp/cyclic-next/issues"><img src="https://img.shields.io/github/issues/abhisekp/cyclic-next.svg" alt="github-issues"></a>
+<a href="https://travis-ci.org/abhisekp/cyclic-next"><img src="https://img.shields.io/travis/abhisekp/cyclic-next.svg" alt="travis-status"></a>
+<a href="https://coveralls.io/github/abhisekp/cyclic-next"><img src="https://img.shields.io/coveralls/abhisekp/cyclic-next.svg" alt="coveralls"></a>
+<a href="https://codecov.io/gh/abhisekp/cyclic-next"><img src="https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="commitizen friendly"></a></p>
+
+<p>Get the cyclic next integer.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<p>Finds the cyclic next integer of a given number given the maximum bound.</p>
+
+<p>e.g.
+Given maximum bound of <code>5</code>    </p>
+
+<pre lang="text"><code>   1
+ /   \
+0     2
+ \   /
+  4-3  
+</code></pre>
+
+<p>cyclic next of <code>4</code> will be <code>0</code>.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm install cyclic-next</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">cyclicNext</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>cyclic-next<span class="pl-pds">'</span></span>;
+
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">0</span>) <span class="pl-c">//=&gt; 1</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">1</span>) <span class="pl-c">//=&gt; 2</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">2</span>) <span class="pl-c">//=&gt; 3</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">3</span>) <span class="pl-c">//=&gt; 4</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">4</span>) <span class="pl-c">//=&gt; 0</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">4</span>, <span class="pl-c1">1</span>) <span class="pl-c">//=&gt; 0</span>
+<span class="pl-en">cyclicNext</span>(<span class="pl-c1">5</span>, <span class="pl-c1">4</span>, <span class="pl-c1">3</span>) <span class="pl-c">//=&gt; 2</span></pre></div>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p><a href="https://about.me/abhisekp">Abhisek Pattnaik</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<ul>
+<li>
+<a href="https://abhisekp.mit-license.org/"><strong>MIT</strong></a> © <a href="https://github.com/abhisekp"><strong>Abhisek Pattnaik</strong></a>
+</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Contributions are highly welcome! This repo is commitizen friendly — please read about it <a href="http://commitizen.github.io/cz-cli/">here</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/abhisekp/cyclic-next">Cyclic Next</a> is maintained by <a href="https://github.com/abhisekp">abhisekp</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
