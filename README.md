@@ -34,7 +34,7 @@ npm install cyclic-next
 ## Usage
 
 ```js
-import cyclicNext from 'cyclic-next;
+import cyclicNext from 'cyclic-next';
 
 cyclicNext(5, 0) //=> 1
 cyclicNext(5, 1) //=> 2
