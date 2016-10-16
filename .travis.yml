@@ -12,4 +12,5 @@ script:
   - npm run validate
 after_success:
   - npm run coveralls
+  - npm run codecov
   - npm run github-release
