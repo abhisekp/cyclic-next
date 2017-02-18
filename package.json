@@ -50,7 +50,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.18.1",
+    "ava": "^0.18.2",
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
