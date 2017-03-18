@@ -68,7 +68,7 @@
     "pmm": "^1.3.1",
     "pre-commit": "^1.1.3",
     "rimraf": "^2.5.4",
-    "xo": "^0.17.0"
+    "xo": "^0.18.0"
   },
   "config": {
     "commitizen": {
