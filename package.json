@@ -56,7 +56,7 @@
     "babel-eslint": "^8.2.5",
     "buble": "^0.19.3",
     "buble-jest": "1.0.1",
-    "buble-jest-flow": "./buble-jest-flow",
+    "buble-jest-flow": "https://github.com/abhisekp/buble-jest-flow.git#^1.0",
     "codecov": "^3.0.2",
     "conventional-github-releaser": "^3.1.2",
     "coveralls": "^3.0.2",

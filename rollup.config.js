@@ -22,9 +22,10 @@ export default [
       }),
       flow({
         all: true,
+        pretty: true,
       }),
-      resolve(), // so Rollup can find `ms`
-      commonjs(), // so Rollup can convert `ms` to an ES module
+      resolve(),
+      commonjs(),
       buble({
         // transpile ES2015+ to ES5
         exclude: ['node_modules/**'],

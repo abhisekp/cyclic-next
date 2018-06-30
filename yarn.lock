@@ -702,8 +702,9 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
-buble-jest-flow@./buble-jest-flow:
-  version "1.0.0"
+"buble-jest-flow@https://github.com/abhisekp/buble-jest-flow.git#^1.0":
+  version "1.0.1"
+  resolved "https://github.com/abhisekp/buble-jest-flow.git#819f7069f9b90839c1894c6c392afbdb894aee6c"
   dependencies:
     flow-remove-types "^1.2.3"
 
