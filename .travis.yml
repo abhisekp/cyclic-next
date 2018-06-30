@@ -1,14 +1,24 @@
 language: node_js
 node_js:
-  - "5"
-  - "6"
+- '5'
+- '6'
 install:
-  - npm install
+- yarn install
 script:
-  - npm run check
-  - npm run build
-  - npm run validate
+- yarn run validate
+- yarn run build
 after_success:
-  - npm run coveralls
-  - npm run codecov
-  - npm run github-release
+- yarn test
+- yarn run coveralls
+- yarn run codecov
+- yarn run github-release
+cache: yarn
+deploy:
+  provider: npm
+  email: abhisekp@engineer.com
+  api_key:
+    secure: TFsfPK2HzZl/wWJ2ASQE4WD0U6UlDooMLha4oe0GL8WwT3AGq12FsCeeorTd1EmIEW31QKUOQhq23aNl222bveSgCCI5PofmRbba+HZJYYWabcApBR8r4ENOZLReP3Fmm/hx8OaMxc4s8ms4l+EmQYIl97dlj3jsME8ZwtkfzzgZiQszjxRSOYFLCDtLEE+9s8Nn1zTEVlaYBXo7nUtRCirCxJInbuhmv1rAuiKO6WxsEMdiOMHZeY1M6OaxbY+lwGeDf6S4g9phrHGnCI2GXnl4KdRNj26R3SWuhCWR4UO34sj/+OmxlylxgEwd+mw5+XKGCIuyIDN/A6q5BBs9ML4u9XhrlUIrtmlumjyQu9ytQAMvKb2iCtOkPYhYdyN8OxAxfCfPkYEdWmZz/Jzo9hVm8v2A/ra3i1pLUPLi1gRa3nsjO2L/0LIG7Rjw8CvWWu8Bn3yXnu1FFulhg9E9mWhSx70uAKkydwVMt1S+yje7RVuNzCVrO27lMTvKvuDGZxsd9L5hY14lWiX3td9lPM3HdsKDBRL+8rHMV5jG3dQ7GyfV76V0rvme2hFBP5VK8dpcYDzZqmE/Hgq8EGmO3tmaPis5kij6x4Yyc+tM+Ylc22ueD8QKq6s33XotZ5JBO8m9LArntYnSJBaNanf5O8v5yoPtwAuLUrJqKBsjvMU=
+  on:
+    tags: true
+    repo: abhisekp/cyclic-next
+    branch: develop

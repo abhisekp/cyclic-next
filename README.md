@@ -8,41 +8,59 @@
 [![codecov](https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg)](https://codecov.io/gh/abhisekp/cyclic-next)
 [![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Get the cyclic next integer.
-
-
-## Features
 Finds the cyclic next integer of a given number given the maximum bound.
 
 e.g.
-Given maximum bound of `5`    
+Given a maximum bound of `5`
+
 ```text
    1
  /   \
 0     2
  \   /
-  4-3  
-```  
-cyclic next of `4` will be `0`.
+  4-3
+```
+
+cyclic next of `0` will be `1`  
+cyclic next of `1` will be `2`  
+cyclic next of `3` will be `4`  
+cyclic next of `4` will be `0`
 
 ## Install
 
 ```sh
-npm install cyclic-next
+# yarn add cyclic-next
+npm install --save cyclic-next # npm i -S cyclic-next
+```
+
+## API
+
+```
+cyclicNext(
+  max: number,
+  curr: number = 0,
+  inc: number = 1
+): number
+
+max - The Maximum number to cycle around {number}
+[curr=0] - Current number {number}
+[inc=1] - Increment amount {number}
+- Return The cyclic next number {number}
 ```
 
 ## Usage
 
 ```js
-import cyclicNext from 'cyclic-next';
+import { cyclicNext } from 'cyclic-next';
+const { cyclicNext } = require('cyclic-next');
 
-cyclicNext(5, 0) //=> 1
-cyclicNext(5, 1) //=> 2
-cyclicNext(5, 2) //=> 3
-cyclicNext(5, 3) //=> 4
-cyclicNext(5, 4) //=> 0
-cyclicNext(5, 4, 1) //=> 0
-cyclicNext(5, 4, 3) //=> 2
+cyclicNext(5, 0); //=> 1
+cyclicNext(5, 1); //=> 2
+cyclicNext(5, 2); //=> 3
+cyclicNext(5, 3); //=> 4
+cyclicNext(5, 4); //=> 0
+cyclicNext(5, 4, 1); //=> 0
+cyclicNext(5, 4, 3); //=> 2
 ```
 
 ## Author
@@ -51,7 +69,7 @@ cyclicNext(5, 4, 3) //=> 2
 
 ## License
 
-- [**MIT**](https://abhisekp.mit-license.org/) © [**Abhisek Pattnaik**](https://github.com/abhisekp)
+[**MIT**](https://abhisekp.mit-license.org/) © [**Abhisek Pattnaik**](https://github.com/abhisekp)
 
 ## Contributing
 
