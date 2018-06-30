@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/abhisekp/cyclic-next.svg?branch=master)](https://travis-ci.org/abhisekp/cyclic-next)
 [![coveralls](https://img.shields.io/coveralls/abhisekp/cyclic-next.svg)](https://coveralls.io/github/abhisekp/cyclic-next)
 [![codecov](https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg)](https://codecov.io/gh/abhisekp/cyclic-next)
-[![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/abhisekp/cyclic-next.svg)](https://greenkeeper.io/)
 
 Finds the cyclic next integer of a given number given the maximum bound.
 
