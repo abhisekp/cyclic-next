@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/cyclic-next.svg)](https://www.npmjs.com/package/cyclic-next)
 [![license](https://img.shields.io/npm/l/cyclic-next.svg)](https://abhisekp.mit-license.org/)
 [![github-issues](https://img.shields.io/github/issues/abhisekp/cyclic-next.svg)](https://github.com/abhisekp/cyclic-next/issues)
-[![travis-status](https://img.shields.io/travis/abhisekp/cyclic-next.svg)](https://travis-ci.org/abhisekp/cyclic-next)
+[![Build Status](https://travis-ci.org/abhisekp/cyclic-next.svg?branch=master)](https://travis-ci.org/abhisekp/cyclic-next)
 [![coveralls](https://img.shields.io/coveralls/abhisekp/cyclic-next.svg)](https://coveralls.io/github/abhisekp/cyclic-next)
 [![codecov](https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg)](https://codecov.io/gh/abhisekp/cyclic-next)
 [![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -51,7 +51,7 @@ max - The Maximum number to cycle around {number}
 ## Usage
 
 ```js
-import { cyclicNext } from 'cyclic-next';
+// import { cyclicNext } from 'cyclic-next';
 const { cyclicNext } = require('cyclic-next');
 
 cyclicNext(5, 0); //=> 1
