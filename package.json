@@ -1,6 +1,6 @@
 {
   "name": "cyclic-next",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the cyclic next integer number.",
   "main": "dist/cyclic-next.cjs.js",
   "module": "dist/cyclic-next.esm.js",
@@ -25,6 +25,9 @@
     "url": "https://github.com/abhisekp/cyclic-next/issues"
   },
   "homepage": "https://github.com/abhisekp/cyclic-next",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rimraf dist/ && rollup -c",
     "dev": "rollup -c -w",
@@ -34,7 +37,7 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "codecov": "codecov -f coverage/lcov.info",
     "lint": "eslint src/. test/.",
-    "test": "jest",
+    "test": "rimraf coverage && jest",
     "prepublish": "run-s build",
     "validate": "run-s lint test",
     "major": "pmm major",
