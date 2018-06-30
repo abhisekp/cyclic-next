@@ -35,6 +35,7 @@
     "codecov": "codecov -f coverage/lcov.info",
     "lint": "eslint src/. test/.",
     "test": "jest",
+    "prepublish": "run-s build",
     "validate": "run-s lint test",
     "major": "pmm major",
     "minor": "pmm minor",
