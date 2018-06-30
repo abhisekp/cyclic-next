@@ -1,6 +1,8 @@
 {
 	"root": true,
 	"extends": "airbnb-base",
+	"plugins": ["flowtype"],
+	"parser": "babel-eslint",
 	"env": {
 		"jest": true
 	}

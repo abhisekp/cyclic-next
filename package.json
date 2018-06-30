@@ -2,9 +2,11 @@
   "name": "cyclic-next",
   "version": "1.0.1",
   "description": "Get the cyclic next integer number.",
-  "main": "lib/index.js",
+  "main": "dist/cyclic-next.cjs.js",
+  "module": "dist/cyclic-next.esm.js",
+  "browser": "dist/cyclic-next.umd.js",
   "files": [
-    "lib/"
+    "dist"
   ],
   "keywords": [
     "cyclic",
@@ -24,78 +26,64 @@
   },
   "homepage": "https://github.com/abhisekp/cyclic-next",
   "scripts": {
-    "audit": "nsp check package",
-    "build": "babel -d ./ ./src",
-    "check": "npm run audit && npm outdated --depth 0",
+    "build": "rimraf dist/ && rollup -c",
+    "dev": "rollup -c -w",
+    "commit": "git-cz",
+    "fix": "prettier-eslint --write src/**/*.js tests/**/*.js",
     "github-release": "conventional-github-releaser -p angular",
-    "coverage": "cross-env NODE_ENV=test nyc ava",
-    "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
-    "codecov": "npm run coverage && codecov -f coverage/lcov.info",
-    "lint": "xo src test",
-    "test": "ava",
-    "validate": "npm run lint && npm test",
-    "prepare": "npm run build && npm run validate && npm run check",
-    "pp": "npm run prepare",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "codecov": "codecov -f coverage/lcov.info",
+    "lint": "eslint src/. test/.",
+    "test": "jest",
+    "validate": "run-s lint test",
     "major": "pmm major",
     "minor": "pmm minor",
     "patch": "pmm patch"
+  },
+  "engines": {
+    "node": ">=4"
   },
   "author": {
     "name": "Abhisek Pattnaik",
     "email": "abhisekp@engineer.com",
     "url": "https://about.me/abhisekp"
   },
-  "pre-commit": [
-    "validate"
-  ],
-  "dependencies": {},
+  "pre-commit": "validate",
+  "dependencies": {
+    "npm-run-all": "^4.1.3"
+  },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
-    "babel-plugin-istanbul": "^2.0.3",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "codecov": "^1.0.1",
-    "conventional-github-releaser": "^1.1.3",
-    "coveralls": "^2.11.14",
-    "cross-env": "^3.1.3",
-    "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^3.8.1",
-    "nsp": "^2.6.2",
-    "nyc": "^8.3.1",
-    "pmm": "^1.3.1",
+    "babel-eslint": "^8.2.5",
+    "buble": "^0.19.3",
+    "buble-jest": "1.0.1",
+    "buble-jest-flow": "./buble-jest-flow",
+    "codecov": "^3.0.2",
+    "conventional-github-releaser": "^3.1.2",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": "^2.12.0",
+    "flow-bin": "^0.75.0",
+    "jest": "^23.2.0",
+    "pmm": "^2.0.0",
     "pre-commit": "^1.1.3",
+    "prettier-eslint": "^8.8.2",
     "rimraf": "^2.5.4",
-    "xo": "^0.17.0"
+    "rollup": "^0.62.0",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-gzip": "^1.4.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-progress": "^0.4.0",
+    "rollup-plugin-uglify-es": "^0.0.1"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "xo": {
-    "esnext": true,
-    "space": true,
-    "envs": [
-      "node"
-    ]
-  },
-  "ava": {
-    "verbose": true,
-    "files": [
-      "src/**/*.test.js",
-      "test/**/*.js"
-    ],
-    "source": [
-      "src/**/*.js",
-      "!dist/**/*",
-      "!build/**/*"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   }
 }
