@@ -7,6 +7,7 @@
 [![coveralls](https://img.shields.io/coveralls/abhisekp/cyclic-next.svg)](https://coveralls.io/github/abhisekp/cyclic-next)
 [![codecov](https://codecov.io/gh/abhisekp/cyclic-next/branch/master/graph/badge.svg)](https://codecov.io/gh/abhisekp/cyclic-next)
 [![commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next?ref=badge_shield)
 
 Finds the cyclic next integer of a given number given the maximum bound.
 
@@ -70,6 +71,9 @@ cyclicNext(5, 4, 3); //=> 2
 ## License
 
 [**MIT**](https://abhisekp.mit-license.org/) © [**Abhisek Pattnaik**](https://github.com/abhisekp)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next?ref=badge_large)
 
 ## Contributing
 
