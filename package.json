@@ -82,7 +82,7 @@
     "rollup-plugin-flow": "^1.1.1",
     "rollup-plugin-gzip": "^1.4.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-progress": "^0.4.0",
+    "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-uglify-es": "^0.0.1"
   },
   "config": {
