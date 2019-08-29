@@ -1588,7 +1588,7 @@ esutils@^2.0.2:
 
 event-stream@~3.3.0:
   version "3.3.4"
-  resolved "http://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  resolved "https://registry.npmjs.org/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
   dependencies:
     duplexer "~0.1.1"
     from "~0"
@@ -1790,9 +1790,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flow-bin@^0.75.0:
-  version "0.75.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.75.0.tgz#b96d1ee99d3b446a3226be66b4013224ce9df260"
+flow-bin@^0.106.3:
+  version "0.106.3"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.106.3.tgz#87b5647bc23ae0efceabb6c50490c02a8478960c"
 
 flow-remove-types@^1.1.0, flow-remove-types@^1.2.3:
   version "1.2.3"
