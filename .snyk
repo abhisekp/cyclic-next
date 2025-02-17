@@ -1,0 +1,69 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:extend:20180424':
+    - codecov > request > extend:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: 'npm:extend:20180424'
+        path: codecov > request > extend
+    - coveralls > request > extend:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: 'npm:extend:20180424'
+        path: coveralls > request > extend
+  SNYK-JS-LODASH-567746:
+    - babel-eslint > @babel/traverse > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: babel-eslint > @babel/traverse > lodash
+    - buble-jest > @babel/core > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: buble-jest > @babel/core > lodash
+    - prettier-eslint > eslint > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: prettier-eslint > eslint > lodash
+    - prettier-eslint > eslint > inquirer > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: prettier-eslint > eslint > inquirer > lodash
+    - babel-eslint > @babel/traverse > @babel/generator > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: babel-eslint > @babel/traverse > @babel/generator > lodash
+    - buble-jest > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          buble-jest > @babel/plugin-transform-modules-commonjs >
+          @babel/helper-module-transforms > lodash
+    - conventional-github-releaser > conventional-changelog > conventional-changelog-core > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          conventional-github-releaser > conventional-changelog >
+          conventional-changelog-core > lodash
+    - prettier-eslint > eslint > table > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: prettier-eslint > eslint > table > lodash
+    - buble-jest > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > @babel/helper-simple-access > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          buble-jest > @babel/plugin-transform-modules-commonjs >
+          @babel/helper-module-transforms > @babel/helper-simple-access > lodash
+    - conventional-github-releaser > conventional-changelog > conventional-changelog-core > conventional-changelog-writer > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          conventional-github-releaser > conventional-changelog >
+          conventional-changelog-core > conventional-changelog-writer > lodash
+    - conventional-github-releaser > conventional-changelog > conventional-changelog-core > conventional-commits-parser > lodash:
+        patched: '2025-02-17T22:18:02.815Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          conventional-github-releaser > conventional-changelog >
+          conventional-changelog-core > conventional-commits-parser > lodash
