@@ -1,6 +1,7 @@
 import { cp, mkdir, rm, writeFile, readFile } from 'node:fs/promises';
 await rm('_site', { recursive: true, force: true });
 await cp('docs', '_site', { recursive: true });
+await cp('CNAME', '_site/CNAME');
 await mkdir('_site/assets', { recursive: true });
 await cp('dist/cyclic-next.umd.js', '_site/assets/cyclic-next.umd.js');
 await cp('dist/cyclic-next.umd.js.map', '_site/assets/cyclic-next.umd.js.map');

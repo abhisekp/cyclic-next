@@ -9,7 +9,7 @@
 
 A tiny, dependency-free JavaScript function for image carousels, repeating schedules, game turns, and round-robin queues. A cycle with five positions uses indexes **0–4**: after 4 comes 0.
 
-**[Try the interactive playground →](https://abhisekp.github.io/cyclic-next/)** · [API](#api) · [Examples](#practical-examples) · [Release setup](#automatic-releases)
+**[Try the interactive playground →](https://cyclic-next.js.org/)** · [API](#api) · [Examples](#practical-examples) · [Release setup](#automatic-releases)
 
 ```sh
 npm install cyclic-next
@@ -179,7 +179,11 @@ When v2 becomes `latest`, stop releasing from `master`; use `1.x` for v1 fixes a
 
 ## GitHub Pages
 
-In repository **Settings → Pages → Build and deployment**, set **Source: GitHub Actions**. [pages.yml](.github/workflows/pages.yml) validates and deploys `_site` from `master` to [abhisekp.github.io/cyclic-next](https://abhisekp.github.io/cyclic-next/). Pull requests produce a downloadable preview artifact in CI. Source files live in `docs/`; the old hand-maintained `gh-pages` content is replaced by the workflow deployment.
+The playground's custom domain is **[cyclic-next.js.org](https://cyclic-next.js.org/)**, provided by [JS.ORG](https://js.org/) and hosted on GitHub Pages. Domain activation requires the JS.ORG DNS request to be approved and propagated.
+
+In repository **Settings → Pages → Build and deployment**, keep **Source: GitHub Actions** and set **Custom domain: `cyclic-next.js.org`**. GitHub Actions deployments use this setting to activate the domain; the tracked `CNAME` file records the intended hostname and is included in the site artifact. The JS.ORG entry maps `cyclic-next` to `abhisekp.github.io/cyclic-next`, like the existing `tech-human-id` project. Enable **Enforce HTTPS** once GitHub provisions the certificate.
+
+[pages.yml](.github/workflows/pages.yml) validates and deploys `_site` from `master`. Pull requests produce a downloadable preview artifact in CI. Source files live in `docs/`; all asset URLs are relative, so the same playground works at the custom-domain root and the original repository path. The old hand-maintained `gh-pages` content is replaced by the workflow deployment.
 
 ## Issues and pull requests
 

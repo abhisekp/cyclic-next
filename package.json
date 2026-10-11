@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": { "type": "git", "url": "git+https://github.com/abhisekp/cyclic-next.git" },
   "bugs": { "url": "https://github.com/abhisekp/cyclic-next/issues" },
-  "homepage": "https://abhisekp.github.io/cyclic-next/",
+  "homepage": "https://cyclic-next.js.org/",
   "publishConfig": { "access": "public" },
   "engines": { "node": ">=4" },
   "author": { "name": "Abhisek Pattnaik", "email": "abhisekp@engineer.com", "url": "https://github.com/abhisekp" },
