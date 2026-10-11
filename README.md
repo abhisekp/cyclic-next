@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/cyclic-next.svg)](https://www.npmjs.com/package/cyclic-next)
 [![CI](https://github.com/abhisekp/cyclic-next/actions/workflows/ci.yml/badge.svg)](https://github.com/abhisekp/cyclic-next/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next?ref=badge_shield)
 
 **Move to the next index. Reach the end. Start again.**
 
@@ -187,3 +188,7 @@ See [the maintenance review](MAINTENANCE.md) for the issue resolutions and a per
 ## Contributing and license
 
 Open an issue or a pull request with a reproducible example. Keep v1 runtime behavior compatible and run `npm run validate` before submitting. MIT © [Abhisek Pattnaik](https://github.com/abhisekp); see [LICENSE](LICENSE).
+
+The external FOSSA license report covers repository dependencies, including development tooling. The report badge identifies the analyzed commit; GitHub Actions validates the package separately. The published package has no runtime dependencies.
+
+[![FOSSA license report](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabhisekp%2Fcyclic-next?ref=badge_large)

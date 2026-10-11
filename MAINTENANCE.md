@@ -8,7 +8,7 @@ Reviewed on 2026-10-11 against master `9b080c525edc8d04be3246608096c7d8ceacf39d`
 - Issue #3: add examples. Carousel, weekday, and round-robin examples now include imports and expected results.
 - PR #4: restore old runtime support. GitHub Actions runs the actual built package on Node 0.12 and 4, as well as later runtimes. The package retains its declared Node 4+ support.
 - PR #6: make coverage part of tests. CI now runs tests before deployment with a 100% line, branch, and function coverage gate on the distributed core; obsolete nyc, AVA, Codecov, and Coveralls upload scripts are removed.
-- PR #64: the FOSSA badge-only contribution was reviewed. Keep its PR open: a 2019 scan does not verify the current lockfile, and its hosted badge should be added only when current FOSSA reporting is configured. The existing MIT license is preserved, and the npm artifact has zero runtime dependencies.
+- PR #64: resolved the README conflicts and incorporated both FOSSA badges without losing the updated documentation. The public report was checked on 2026-10-11: it identifies the published v1.1.0 commit `cb87754b854583e5c22f22a624540328c7900a67` and reports no license issues. Its repository analysis includes development tooling; the npm artifact has zero runtime dependencies. The README distinguishes this external license report from GitHub Actions validation and retains the MIT license.
 - Closed PR #54 adds a CodeTriage badge; no package behavior needs integration. Closed/merged PR #5 fixes legacy coverage scripts, now replaced by the GitHub Actions coverage gate.
 
 ## Dependency PR decisions
