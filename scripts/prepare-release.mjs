@@ -1,0 +1,10 @@
+import { readFile, appendFile } from 'node:fs/promises';
+import policy from './release-policy.cjs';
+const pkg = JSON.parse(await readFile('package.json', 'utf8'));
+const selected = policy.releasePolicy(process.env.GITHUB_REF_NAME, pkg.version);
+const response = await fetch(`https://registry.npmjs.org/cyclic-next/${pkg.version}`, { signal: AbortSignal.timeout(30000) });
+const published = policy.registryState(response.status) === 'published';
+const metadata = published ? await response.json() : {};
+const gitHead = /^[a-f0-9]{40}$/.test(metadata.gitHead || '') ? metadata.gitHead : '';
+await appendFile(process.env.GITHUB_OUTPUT, `published=${published}\nversion=${pkg.version}\ntag=${selected.tag}\ngit_tag=${selected.gitTag}\npublished_git_head=${gitHead}\n`);
+console.log(published ? `Version ${pkg.version} already exists; publication is skipped.` : `Ready to publish ${pkg.version} with dist-tag ${selected.tag}.`);

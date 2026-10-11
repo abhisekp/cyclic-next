@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "paths": { "cyclic-next": ["../../dist/index.d.ts"] },
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["*.ts", "*.mts"]
+}

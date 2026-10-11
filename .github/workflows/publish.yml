@@ -1,0 +1,58 @@
+name: Publish to npm
+on:
+  push:
+    branches: [master, '1.x', '2.x']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: npm-release
+  cancel-in-progress: false
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+  publish:
+    needs: checks
+    if: github.repository == 'abhisekp/cyclic-next' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/1.x' || github.ref == 'refs/heads/2.x')
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - run: npm install --global npm@11.19.1
+      - run: npm ci
+      - name: Check branch, version, and registry
+        id: release
+        run: node scripts/prepare-release.mjs
+      - name: Verify package to publish
+        if: steps.release.outputs.published == 'false'
+        run: npm run build && npm test && npm run test:types && npm run test:package
+      - name: Publish through npm trusted publishing
+        if: steps.release.outputs.published == 'false'
+        run: npm publish --access public --tag "$NPM_DIST_TAG"
+        env:
+          NPM_DIST_TAG: ${{ steps.release.outputs.tag }}
+      - name: Create GitHub release after successful publication
+        if: steps.release.outputs.published == 'false' || steps.release.outputs.published_git_head != ''
+        run: |
+          if git rev-parse --verify "refs/tags/$RELEASE_TAG^{commit}" >/dev/null 2>&1; then
+            test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$RELEASE_COMMIT"
+          fi
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --target "$RELEASE_COMMIT" --title "$RELEASE_TAG" --generate-notes
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.git_tag }}
+          RELEASE_COMMIT: ${{ steps.release.outputs.published_git_head || github.sha }}
