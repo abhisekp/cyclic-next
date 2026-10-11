@@ -1,20 +1,13 @@
 /**
- * @name cyclicNext
- * @version 1.0.0
- * @since 1.0.0
- * @param {number} max The Maximum number to cycle around
- * @param {number} [curr=0] Current number
- * @param {number} [inc=1] Increment amount
- * @return {number} The cyclic next number
- * @example
- *
- * cyclicNext(5, 0) //=> 1
- * cyclicNext(5, 1) //=> 2
- * cyclicNext(5, 2) //=> 3
- * cyclicNext(5, 3) //=> 4
- * cyclicNext(5, 4) //=> 0
- * cyclicNext(5, 4, 1) //=> 0
+ * Advance through a cycle of max positions. Keeps JavaScript remainder semantics.
+ * @param {number} max Exclusive upper bound (the number of positions).
+ * @param {number} [curr=0] Current position.
+ * @param {number} [inc=1] Step size.
+ * @returns {number} The remainder of curr + inc divided by max.
  */
-const cyclicNext = (max: number, curr: number = 0, inc: number = 1): number => (curr + inc) % max;
-
+function cyclicNext(max) {
+  var curr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var inc = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  return (curr + inc) % max;
+}
 export default cyclicNext;
