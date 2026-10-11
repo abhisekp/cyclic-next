@@ -9,6 +9,8 @@
 
 A tiny, dependency-free JavaScript function for image carousels, repeating schedules, game turns, and round-robin queues. A cycle with five positions uses indexes **0–4**: after 4 comes 0.
 
+The forward companion to [cyclic-prev](https://github.com/abhisekp/cyclic-prev), which moves backward and wraps from the first position to the last.
+
 **[Try the interactive playground →](https://cyclic-next.js.org/)** · [API](#api) · [Examples](#practical-examples) · [Release setup](#automatic-releases)
 
 ```sh
@@ -89,6 +91,26 @@ cyclicNext(5, undefined, undefined); // 1
 ```
 
 Guard empty arrays before indexing. To move backward with a non-negative index, use a positive equivalent step: `cyclicNext(5, 0, 4)` returns `4`. Negative zero, `NaN`, infinities, and JavaScript coercion behavior remain unchanged. The callable default, named export, existing `dist` paths, and published `lib/index.js` path remain available; there is no restrictive `exports` map.
+
+## Companion: cyclic-prev
+
+Use [cyclic-prev](https://github.com/abhisekp/cyclic-prev) for previous-slide controls, stepping back through weekdays, and revisiting earlier turns. Both packages have zero runtime dependencies, CommonJS and ES module bundles, and TypeScript declarations.
+
+```sh
+npm install cyclic-next cyclic-prev
+```
+
+```js
+const cyclicNext = require('cyclic-next');
+const cyclicPrev = require('cyclic-prev');
+
+cyclicNext(5, 4); // 0: after the last position, return to the first
+cyclicPrev(5, 0); // 4: before the first position, return to the last
+```
+
+For array navigation, use a positive safe integer cycle size and non-negative safe integer indexes and steps. The edge-case contracts differ: cyclic-next v1 preserves JavaScript remainder behavior without input validation; cyclic-prev validates safe integers and normalizes the result into `[0, max)`. For example, `cyclicNext(5, 0, -1)` returns `-1`, while `cyclicPrev(5, 0)` returns `4`.
+
+[cyclic-prev documentation](https://github.com/abhisekp/cyclic-prev#readme) · [npm package](https://www.npmjs.com/package/cyclic-prev) · [Interactive playground](https://abhisekp.github.io/cyclic-prev/)
 
 ## Practical examples
 
