@@ -52,4 +52,7 @@ jspm_packages
 /build
 /dist
 /lib
+/_site
+*.tgz
+/coverage
 !/src

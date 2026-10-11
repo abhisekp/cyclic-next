@@ -1,0 +1,11 @@
+import { cp, mkdir, rm, writeFile, readFile } from 'node:fs/promises';
+await rm('_site', { recursive: true, force: true });
+await cp('docs', '_site', { recursive: true });
+await mkdir('_site/assets', { recursive: true });
+await cp('dist/cyclic-next.umd.js', '_site/assets/cyclic-next.umd.js');
+await cp('dist/cyclic-next.umd.js.map', '_site/assets/cyclic-next.umd.js.map');
+await writeFile('_site/.nojekyll', '');
+const pkg = JSON.parse(await readFile('package.json', 'utf8'));
+const html = await readFile('_site/index.html', 'utf8');
+await writeFile('_site/index.html', html.replaceAll('{{VERSION}}', pkg.version));
+console.log('Built the offline playground using the actual package bundle.');
