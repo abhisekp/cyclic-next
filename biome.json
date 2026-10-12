@@ -1,0 +1,58 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+	"files": { "includes": ["**", "!!**/dist"] },
+	"formatter": { "enabled": true, "indentStyle": "tab" },
+	"linter": {
+		"enabled": true,
+		"rules": { "preset": "none" },
+		"includes": [
+			"**/*.js",
+			"**/*.mjs",
+			"**/*.cjs"
+		]
+	},
+	"javascript": { "formatter": { "quoteStyle": "double" } },
+	"overrides": [
+		{
+			"includes": ["**/*.js", "**/*.mjs", "**/*.cjs"],
+			"javascript": {
+				"globals": [
+					"window",
+					"console",
+					"document",
+					"setInterval",
+					"__dirname",
+					"exports",
+					"fetch",
+					"clearTimeout",
+					"setTimeout",
+					"require",
+					"clearInterval",
+					"module",
+					"requestAnimationFrame",
+					"process",
+					"Buffer",
+					"navigator",
+					"URL",
+					"AbortSignal"
+				]
+			},
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noConstantCondition": "error",
+						"noUndeclaredVariables": "error",
+						"noUnreachable": "error",
+						"noUnusedVariables": "error"
+					},
+					"suspicious": { "noDoubleEquals": "error" }
+				}
+			}
+		}
+	],
+	"assist": {
+		"enabled": true,
+		"actions": { "source": { "organizeImports": "on" } }
+	}
+}
