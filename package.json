@@ -54,8 +54,8 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.15",
-    "rollup": "4.64.5",
+    "@biomejs/biome": "2.6.3",
+    "rollup": "4.65.1",
     "typescript": "7.0.2"
   }
 }
